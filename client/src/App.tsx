@@ -1,5 +1,6 @@
 import React from 'react';
-import BingMapsReact from 'bingmaps-react';
+// @ts-ignore
+import {ReactBingmaps} from 'react-bingmaps-vnext';
 
 import './App.css';
 import bingMapsKey from './bing-maps-key.js';
@@ -7,11 +8,10 @@ import bingMapsKey from './bing-maps-key.js';
 function App() {
 
   return (
-    <div className="App">
-      {bingMapsKey}
-      <BingMapsReact
-      bingMapsKey={bingMapsKey}
+      <ReactBingmaps
+      bingmapKey={bingMapsKey}
       height="500px"
+      className="map"
       mapOptions={{
         navigationBarMode: "square",
       }}
@@ -21,7 +21,6 @@ function App() {
         mapTypeId: "grayscale",
       }}
     />
-    </div>
   );
 }
 
